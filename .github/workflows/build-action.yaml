@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Checkout code
       - uses: actions/checkout@v2
+      - run: ls -lah
       - name: Build app
       - run: dotnet publish -c Release -o ./publish
       - name: Create Archive Release

@@ -14,5 +14,5 @@ jobs:
   Verifdy:
     runs-on: ubuntu-latest
     steps:
-      - run ls -lah ./publish
+      - run: ls -lah ./publish
         

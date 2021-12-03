@@ -1,16 +1,11 @@
 name: Build action
 on: [push]
 jobs:
-  Checkout:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: ls -lah
-  Build:
-    steps:
       - run: dotnet --version
       - run: dotnet publish -c Release -o ./publish
-  Verify:
-    steps:
       - run: ls -lah ./publish
-        

@@ -1,7 +1,7 @@
 name: Build action
 on: [push]
 jobs:
-  Checkout SCM
+  Checkout SCM:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

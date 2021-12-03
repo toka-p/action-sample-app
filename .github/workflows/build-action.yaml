@@ -10,4 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: dotnet --version
+      - run dotnet publish -c Release -o ./publish
+  Verifdy:
+    runs-on: ubuntu-latest
+    steps:
+      - run ls -lah ./publish
         

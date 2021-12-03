@@ -4,8 +4,18 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v2
-      - run: ls -lah
-      - run: dotnet --version
+      - name: Build app
       - run: dotnet publish -c Release -o ./publish
-      - run: ls -lah ./publish
+      - name: Create Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'release.zip'
+          directory: './publish'
+          exclusions: '*.git*'
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: 'release.zip'
+          token: ${{ secrets.GITHUB_TOKEN }}

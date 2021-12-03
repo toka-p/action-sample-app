@@ -9,5 +9,6 @@ jobs:
   Build:
     with:
       dotnet-version: '5.0'
-    run: dotnet --version
+    steps:
+      - run: dotnet --version
         

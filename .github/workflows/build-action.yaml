@@ -3,6 +3,6 @@ on: [push]
 jobs:
   Checkout SCM
     runs-on: ubuntu-latest
-    uses: actions/checkout@v2
     steps:
+      - uses: actions/checkout@v2
       - run "ls -lah"
